@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Wickerman"
-run/main_scene="res://Levels/Wickerman.tscn"
+run/main_scene="res://Levels/Main.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 

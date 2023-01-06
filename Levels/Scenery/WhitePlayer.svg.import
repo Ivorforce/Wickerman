@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayerUP.svg-fdfaf1cdbd08c5424447ae9320e0a700.stex"
+path="res://.import/WhitePlayer.svg-bcccfd9a119c244a6b96f222d4719b93.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/PlayerUP.svg"
-dest_files=[ "res://.import/PlayerUP.svg-fdfaf1cdbd08c5424447ae9320e0a700.stex" ]
+source_file="res://Levels/Scenery/WhitePlayer.svg"
+dest_files=[ "res://.import/WhitePlayer.svg-bcccfd9a119c244a6b96f222d4719b93.stex" ]
 
 [params]
 

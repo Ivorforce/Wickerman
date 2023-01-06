@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/Level1.svg" type="Texture" id=1]
-[ext_resource path="res://Levels/Yellow.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/WhitePlayer.svg" type="Texture" id=3]
+[ext_resource path="res://Actors/Wickerman/Wickerman.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Scenery/WhitePlayer.svg" type="Texture" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
