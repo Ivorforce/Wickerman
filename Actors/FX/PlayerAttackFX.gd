@@ -22,4 +22,4 @@ func _on_PlayerAttackFX_area_entered(area):
 		owner._velocity += knockback * 2
 		owner.damage(1)
 		owner.attackable.time_since_hit = 0
-		Freezer.next_freeze_s += 0.1
+		Freezer.next_freeze_s += 0.05

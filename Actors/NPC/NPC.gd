@@ -29,7 +29,7 @@ func _physics_process(delta):
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
 
-func damage(damage: float):
+func damage(damage: int):
 	health -= damage
 	
 	if health <= 0:

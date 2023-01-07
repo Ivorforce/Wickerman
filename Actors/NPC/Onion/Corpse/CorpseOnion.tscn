@@ -6,14 +6,14 @@
 [ext_resource path="res://Shaders/AttackableMaterial.tres" type="Material" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19, 29 )
+extents = Vector2( 20, 23 )
 
 [node name="Corpse" type="KinematicBody2D" groups=["corpses"]]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 4 )
-scale = Vector2( 0.1, 0.15 )
+scale = Vector2( 0.1, 0.12 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
 

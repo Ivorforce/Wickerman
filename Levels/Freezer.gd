@@ -1,7 +1,7 @@
 extends Node
 
-var freeze_s := 0
-var next_freeze_s := 0
+var freeze_s := 0.0
+var next_freeze_s := 0.0
 
 func _physics_process(delta):
 	if freeze_s > 0:
