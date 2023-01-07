@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "PlayerAttackFX",
 "language": "GDScript",
 "path": "res://Actors/FX/PlayerAttackFX.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Wickerman",
+"language": "GDScript",
+"path": "res://Actors/Wickerman/Wickerman.gd"
 } ]
 _global_script_class_icons={
 "Attackable": "",
 "Corpse": "",
 "NPC": "",
-"PlayerAttackFX": ""
+"PlayerAttackFX": "",
+"Wickerman": ""
 }
 
 [application]

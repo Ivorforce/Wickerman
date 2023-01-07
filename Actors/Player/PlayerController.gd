@@ -41,9 +41,10 @@ func handle_actions():
 			
 			if nearest.global_position.distance_to(global_position) < corpse_drag_distance:
 				dragging_body = nearest
+				dragging_body.is_protected = true
 		else:
-			dragging_body = null
-			
+			drop_corpse()
+		
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
 		_time_to_attack = 0.8
 	
@@ -72,6 +73,11 @@ func drag_corpse() -> bool:
 		
 		dragging_body._velocity += (drag_direction * corpse_drag_speed - dragging_body._velocity) * 0.05
 		return true
+
+func drop_corpse():
+	dragging_body.is_protected = false
+	dragging_body = null
+
 
 func _physics_process(delta):
 	handle_actions()

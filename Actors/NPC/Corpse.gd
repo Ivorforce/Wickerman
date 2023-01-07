@@ -1,7 +1,10 @@
 extends KinematicBody2D
 class_name Corpse
 
-export var friction = 0.8
+export var vegetable_type := 0
+var is_protected := false
+
+export var friction := 0.8
 var _velocity := Vector2.ZERO
 
 onready var attackable: Attackable = $Sprite

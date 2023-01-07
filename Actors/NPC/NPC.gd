@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name NPC
 
+export var vegetable_type := 0
 export(PackedScene) var CorpseEntity
 
 export var health := 2

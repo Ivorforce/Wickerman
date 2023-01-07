@@ -10,8 +10,8 @@ func _process(delta):
 	if time_left <= 0:
 		queue_free()
 
-func _on_PlayerAttackFX_area_entered(area):
-	var owner = area.get_parent()
+func _on_PlayerAttackFX_body_entered(body):
+	var owner = body
 	
 	if owner is Corpse:
 		owner._velocity += knockback
