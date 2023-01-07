@@ -28,8 +28,12 @@ func try_sacrifice(corpse: Corpse):
 	
 	if current_demand.vegetable_type == corpse.vegetable_type:		
 		Freezer.next_freeze_s += 0.05
-		# TODO Flash white
+		
+		var post_process: PostProcess = $"/root/Game/PostProcess"
+		post_process.screen_flash_s = 0.1
+		post_process.screen_shake_s = 0.2
+		
 		corpse.queue_free()
-
+		
 		current_demand.queue_free()
 		next_demand()

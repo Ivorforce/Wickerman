@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float whitening;
+uniform vec2 tex_offset;
+
+void fragment() {
+    vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV + tex_offset, 0.0).rgb;
+
+    c.rgb = mix(c.rgb, vec3(1,1,1), whitening);
+
+    COLOR.rgb = c;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/whitening = null
+shader_param/tex_offset = null
