@@ -11,7 +11,12 @@ func _physics_process(delta):
 	
 	var direction := target - parent.global_position
 	var speed = parent.speed
-		
+	
+	if parent.is_shocked_time >= 0:
+		speed = 0
+	elif parent.health < parent.max_health:
+		speed *= sqrt(float(parent.health) / parent.max_health)
+	
 	if parent.is_scared_target != null:
 		var difference := parent.is_scared_target.global_position - parent.global_position
 		var dist_mul := 1.3 if is_running else 1.0

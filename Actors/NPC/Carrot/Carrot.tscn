@@ -14,9 +14,8 @@ extents = Vector2( 16, 20 )
 collision_layer = 3
 script = ExtResource( 2 )
 CorpseEntity = ExtResource( 5 )
-health = 1
-max_alert_time = 3
-sight_distance = 700
+max_health = 1
+initial_shock_time = 1.5
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )

@@ -15,7 +15,7 @@ collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 1
 CorpseEntity = ExtResource( 5 )
-sight_distance = 200
+initial_shock_time = 0.8
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
