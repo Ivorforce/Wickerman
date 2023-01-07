@@ -37,3 +37,6 @@ collision_mask = 8
 
 [node name="HitShape" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
