@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Corpse
 
 # A factor that controls the character's inertia.
-export var friction = 0.18
+export var friction = 0.8
 
 # Mapping of direction to a sprite index.
 

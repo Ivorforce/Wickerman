@@ -33,5 +33,5 @@ texture = SubResource( 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
 polygon = PoolVector2Array( -416, -416, 416, -416, 416, 416, -416, 416, -416, -416, -480.165, -376.478, -479.604, 479.75, 480.067, 480.942, 478.875, -480.318, -480.165, -480.658, -480.165, -376.478 )
 
-[node name="NPC" parent="." groups=["corpses"] instance=ExtResource( 4 )]
+[node name="Corpse" parent="." groups=["corpses"] instance=ExtResource( 4 )]
 position = Vector2( 219, 86 )
