@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Corpse",
 "language": "GDScript",
-"path": "res://Actors/Corpse/Corpse.gd"
+"path": "res://Actors/NPC/Corpse.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "NPC",

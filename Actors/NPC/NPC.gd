@@ -1,7 +1,7 @@
 extends KinematicBody2D
 class_name NPC
 
-var CorpseEntity := preload("res://Actors/Corpse/Corpse.tscn")
+export(PackedScene) var CorpseEntity
 
 export var health := 2
 
@@ -37,4 +37,3 @@ func damage(damage: float):
 		get_parent().add_child(corpse)
 		corpse.global_position = global_position
 		queue_free()
-
