@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name PlayerController
 
 var PlayerAttackFXEntity := preload("res://Actors/FX/PlayerAttackFX.tscn")
 
@@ -118,6 +119,7 @@ func attack():
 	var attack_fx: PlayerAttackFX = PlayerAttackFXEntity.instance()
 	attack_fx.time_left = 0.2
 	attack_fx.knockback = _look_direction * 100
+	attack_fx.source = self
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + _look_direction * 60
 

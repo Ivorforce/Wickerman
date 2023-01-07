@@ -16,6 +16,9 @@ script = ExtResource( 2 )
 vegetable_type = 2
 CorpseEntity = ExtResource( 5 )
 health = 3
+max_alert_time = 30
+sight_distance = 400
+speed = 50
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
