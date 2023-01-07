@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Actors/Attackable.gd" type="Script" id=1]
+[ext_resource path="res://Actors/Wickerman/DemandBackground.svg" type="Texture" id=2]
+[ext_resource path="res://Shaders/AttackableMaterial.tres" type="Material" id=3]
+
+[node name="WickermanDemandSpeech" type="Node2D"]
+position = Vector2( 1, -105 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = ExtResource( 3 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
