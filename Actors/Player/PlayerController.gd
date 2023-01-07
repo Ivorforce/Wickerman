@@ -14,6 +14,7 @@ export var corpse_drag_distance := 100
 export var friction = 0.18
 
 var _time_to_attack := -1.0
+var _recovery_time := -1.0
 
 # Mapping of direction to a sprite index.
 var _sprites := {Vector2.RIGHT: 1, Vector2.LEFT: 2, Vector2.UP: 3, Vector2.DOWN: 4}
@@ -76,7 +77,11 @@ func _physics_process(delta):
 			target_velocity = direction * (speed_when_dragging * (0.6 + sin(OS.get_ticks_msec() / 100) * 0.4))
 
 	if _time_to_attack > 0:
-		target_velocity *= 0.1 + _time_to_attack * 0.3
+		target_velocity *= _time_to_attack * 0.25
+
+	if _recovery_time > 0:
+		target_velocity *= 0.6 - _recovery_time * 3
+		_recovery_time -= delta
 
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
@@ -88,6 +93,8 @@ func _physics_process(delta):
 			attack_fx.time_left = 0.2
 			get_parent().get_parent().get_node("FX").add_child(attack_fx)
 			attack_fx.global_position = global_position + _look_direction * 60
+			
+			_recovery_time = 0.2
 
 # The code below updates the character's sprite to look in a specific direction.
 func _unhandled_input(event):
