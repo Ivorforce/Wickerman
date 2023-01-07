@@ -14,10 +14,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Actors/Corpse/Corpse.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Area2D",
 "class": "FX",
 "language": "GDScript",
-"path": "res://Actors/FX/FX.gd"
+"path": "res://Actors/FX/PlayerAttackFX.gd"
 } ]
 _global_script_class_icons={
 "Corpse": "",
@@ -99,6 +99,14 @@ attack={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="physics"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="player"
+2d_physics/layer_4="enemyAttack"
+2d_physics/layer_5="playerAttack"
 
 [rendering]
 

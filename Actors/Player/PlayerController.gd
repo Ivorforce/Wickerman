@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var FXEntity := preload("res://Actors/FX/FX.tscn")
+var PlayerAttackFXEntity := preload("res://Actors/FX/PlayerAttackFX.tscn")
 
 
 # Movement speed in pixels per second.
@@ -19,6 +19,7 @@ var _recovery_time := -1.0
 # Mapping of direction to a sprite index.
 var _sprites := {Vector2.RIGHT: 1, Vector2.LEFT: 2, Vector2.UP: 3, Vector2.DOWN: 4}
 var _look_direction := Vector2.RIGHT
+var _look_direction_next := Vector2.RIGHT
 var _velocity := Vector2.ZERO
 
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
@@ -46,6 +47,19 @@ func handle_actions():
 			
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
 		_time_to_attack = 1		
+		
+	if Input.is_action_pressed("right"):
+		_look_direction_next = Vector2.RIGHT
+		_update_sprite()
+	elif Input.is_action_pressed("left"):
+		_look_direction_next = Vector2.LEFT
+		_update_sprite()
+	elif Input.is_action_pressed("down"):
+		_look_direction_next = Vector2.DOWN
+		_update_sprite()
+	elif Input.is_action_pressed("up"):
+		_look_direction_next = Vector2.UP
+		_update_sprite()
 		
 func drag_corpse() -> bool:
 		var drag_direction := global_position - dragging_body.global_position
@@ -82,6 +96,8 @@ func _physics_process(delta):
 	if _recovery_time > 0:
 		target_velocity *= 0.6 - _recovery_time * 3
 		_recovery_time -= delta
+		if _recovery_time <= 0:
+			_update_sprite()
 
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
@@ -89,32 +105,22 @@ func _physics_process(delta):
 	if _time_to_attack > 0:
 		_time_to_attack -= delta
 		if _time_to_attack <= 0:
-			var attack_fx: FX = FXEntity.instance()
-			attack_fx.time_left = 0.2
-			get_parent().get_parent().get_node("FX").add_child(attack_fx)
-			attack_fx.global_position = global_position + _look_direction * 60
-			
-			_recovery_time = 0.2
+			attack()
 
-# The code below updates the character's sprite to look in a specific direction.
-func _unhandled_input(event):
-	if _time_to_attack > 0:
-		# strafe
-		return
-		
-	if event.is_action_pressed("right"):
-		_look_direction = Vector2.RIGHT
-		_update_sprite()
-	elif event.is_action_pressed("left"):
-		_look_direction = Vector2.LEFT
-		_update_sprite()
-	elif event.is_action_pressed("down"):
-		_look_direction = Vector2.DOWN
-		_update_sprite()
-	elif event.is_action_pressed("up"):
-		_look_direction = Vector2.UP
-		_update_sprite()
+func attack():
+	_recovery_time = 0.2
+	
+	var attack_fx: FX = PlayerAttackFXEntity.instance()
+	attack_fx.time_left = 0.2
+	attack_fx.knockback = _look_direction * 20
+	get_parent().get_parent().get_node("FX").add_child(attack_fx)
+	attack_fx.global_position = global_position + _look_direction * 60
 
 
 func _update_sprite() -> void:
+	if _time_to_attack > 0 or _recovery_time > 0:
+		# strafe
+		return
+	
+	_look_direction = _look_direction_next
 	animated_sprite.frame = _sprites[_look_direction]
