@@ -10,8 +10,8 @@
 [node name="Level1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 536 )
 
-[node name="PlayerTopDownAcceleration" parent="Level1/Borders/Entities" index="2" instance=ExtResource( 4 )]
-position = Vector2( 1, 125 )
+[node name="Player" parent="Level1/Entities" index="2" instance=ExtResource( 4 )]
+position = Vector2( 4, 126 )
 
 [node name="Particles" type="Node2D" parent="."]
 position = Vector2( 0, 6.15164 )

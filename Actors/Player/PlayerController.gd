@@ -113,7 +113,7 @@ func attack():
 	var attack_fx: FX = PlayerAttackFXEntity.instance()
 	attack_fx.time_left = 0.2
 	attack_fx.knockback = _look_direction * 20
-	get_parent().get_parent().get_node("FX").add_child(attack_fx)
+	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + _look_direction * 60
 
 
