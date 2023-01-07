@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Level1.svg" type="Texture" id=1]
 [ext_resource path="res://Actors/Wickerman/Wickerman.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Scenery/WhitePlayer.svg" type="Texture" id=3]
 [ext_resource path="res://Actors/Corpse/Corpse.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Actors/NPC/NPC.tscn" type="PackedScene" id=5]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -33,5 +34,8 @@ polygon = PoolVector2Array( -416, -416, 416, -416, 416, 416, -416, 416, -416, -4
 [node name="Wickerman" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( 2, 0 )
 
-[node name="Corpse" parent="Entities" groups=["corpses"] instance=ExtResource( 4 )]
+[node name="Corpse" parent="Entities" instance=ExtResource( 4 )]
 position = Vector2( 219, 86 )
+
+[node name="NPC" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( -192, 163 )

@@ -9,19 +9,31 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Attackable",
+"language": "GDScript",
+"path": "res://Actors/Attackable.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Corpse",
 "language": "GDScript",
 "path": "res://Actors/Corpse/Corpse.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "NPC",
+"language": "GDScript",
+"path": "res://Actors/NPC/NPC.gd"
+}, {
 "base": "Area2D",
-"class": "FX",
+"class": "PlayerAttackFX",
 "language": "GDScript",
 "path": "res://Actors/FX/PlayerAttackFX.gd"
 } ]
 _global_script_class_icons={
+"Attackable": "",
 "Corpse": "",
-"FX": ""
+"NPC": "",
+"PlayerAttackFX": ""
 }
 
 [application]

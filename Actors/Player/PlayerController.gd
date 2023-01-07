@@ -45,7 +45,7 @@ func handle_actions():
 			dragging_body = null
 			
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
-		_time_to_attack = 1		
+		_time_to_attack = 0.8
 	
 	if _time_to_attack <= 0 and _recovery_time <= 0:
 		if Input.is_action_pressed("right"):
@@ -108,7 +108,7 @@ func _physics_process(delta):
 func attack():
 	_recovery_time = 0.2
 	
-	var attack_fx: FX = PlayerAttackFXEntity.instance()
+	var attack_fx: PlayerAttackFX = PlayerAttackFXEntity.instance()
 	attack_fx.time_left = 0.2
 	attack_fx.knockback = _look_direction * 100
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
