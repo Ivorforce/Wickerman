@@ -47,7 +47,7 @@ func handle_actions():
 			
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
 		_time_to_attack = 1		
-		
+	
 	if Input.is_action_pressed("right"):
 		_look_direction_next = Vector2.RIGHT
 		_update_sprite()
@@ -60,7 +60,7 @@ func handle_actions():
 	elif Input.is_action_pressed("up"):
 		_look_direction_next = Vector2.UP
 		_update_sprite()
-		
+
 func drag_corpse() -> bool:
 		var drag_direction := global_position - dragging_body.global_position
 		
@@ -112,7 +112,7 @@ func attack():
 	
 	var attack_fx: FX = PlayerAttackFXEntity.instance()
 	attack_fx.time_left = 0.2
-	attack_fx.knockback = _look_direction * 20
+	attack_fx.knockback = _look_direction * 100
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + _look_direction * 60
 

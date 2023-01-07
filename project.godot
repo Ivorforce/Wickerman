@@ -31,6 +31,10 @@ run/main_scene="res://Levels/Main.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+Freezer="*res://Levels/Freezer.gd"
+
 [display]
 
 window/size/width=1920

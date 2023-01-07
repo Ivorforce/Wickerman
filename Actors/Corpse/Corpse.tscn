@@ -1,7 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Actors/NPC/NPC.svg" type="Texture" id=1]
 [ext_resource path="res://Actors/Corpse/Corpse.gd" type="Script" id=2]
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform float whitening;
+
+void fragment() {
+    vec4 texture_color = texture(TEXTURE, UV);
+    COLOR = vec4(mix(texture_color.rgb, vec3(1,1,1), whitening), texture_color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = SubResource( 2 )
+shader_param/whitening = null
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19, 29 )
@@ -10,6 +25,7 @@ extents = Vector2( 19, 29 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 3 )
 scale = Vector2( 0.1, 0.15 )
 texture = ExtResource( 1 )
 

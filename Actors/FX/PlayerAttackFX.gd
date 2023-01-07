@@ -14,5 +14,5 @@ func _on_PlayerAttackFX_area_entered(area):
 	
 	if owner is Corpse:
 		owner._velocity += knockback
-	
-	print("body entered")
+		owner.time_since_hit = 0
+		Freezer.next_freeze_s += 0.1
