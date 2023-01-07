@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Onion.svg-be8f6a0637cbf0f9fa2ed70b32d95631.stex"
+path="res://.import/Carrot.png-7d9fa7e6d54a5c21461ede60743b425c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/NPC/Onion/Onion.svg"
-dest_files=[ "res://.import/Onion.svg-be8f6a0637cbf0f9fa2ed70b32d95631.stex" ]
+source_file="res://Actors/NPC/Carrot/Carrot.png"
+dest_files=[ "res://.import/Carrot.png-7d9fa7e6d54a5c21461ede60743b425c.stex" ]
 
 [params]
 

@@ -64,16 +64,17 @@ func handle_actions():
 			_update_sprite()
 
 func drag_corpse() -> bool:
-		var drag_direction := global_position - dragging_body.global_position
+	var drag_direction := global_position - dragging_body.global_position
+	
+	if drag_direction.length() < corpse_drag_distance:
+		return false
 		
-		if drag_direction.length() < corpse_drag_distance:
-			return false
-			
-		if drag_direction.length() > 1:
-			drag_direction = drag_direction.normalized()
-		
-		dragging_body._velocity += (drag_direction * corpse_drag_speed - dragging_body._velocity) * 0.05
-		return true
+	if drag_direction.length() > 1:
+		drag_direction = drag_direction.normalized()
+	
+	dragging_body._velocity += (drag_direction * corpse_drag_speed - dragging_body._velocity) * 0.05
+	
+	return true
 
 func drop_corpse():
 	dragging_body.is_protected = false

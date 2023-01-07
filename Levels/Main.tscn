@@ -12,41 +12,8 @@
 [node name="Level1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 536 )
 
-[node name="Carrot" parent="Level1/Entities" index="1"]
-max_alert_time = 10.0
-
-[node name="Player" parent="Level1/Entities" index="2" instance=ExtResource( 4 )]
-position = Vector2( 4, 126 )
-
-[node name="Pumpkin" parent="Level1/Entities" index="3"]
-max_alert_time = 10.0
-sight_distance = 1000.0
-speed = 100.0
-
-[node name="Onion" parent="Level1/Entities" index="4"]
-sight_distance = 1000.0
-
-[node name="Carrot2" parent="Level1/Entities" index="5"]
-max_alert_time = 10.0
-
-[node name="Pumpkin2" parent="Level1/Entities" index="6"]
-max_alert_time = 10.0
-sight_distance = 1000.0
-speed = 100.0
-
-[node name="Onion2" parent="Level1/Entities" index="7"]
-sight_distance = 1000.0
-
-[node name="Carrot3" parent="Level1/Entities" index="8"]
-max_alert_time = 10.0
-
-[node name="Pumpkin3" parent="Level1/Entities" index="9"]
-max_alert_time = 10.0
-sight_distance = 1000.0
-speed = 100.0
-
-[node name="Onion3" parent="Level1/Entities" index="10"]
-sight_distance = 1000.0
+[node name="Player" parent="Level1/Entities" index="1" instance=ExtResource( 4 )]
+position = Vector2( 2, 165 )
 
 [node name="Particles" type="Node2D" parent="."]
 position = Vector2( 0, 6.15164 )

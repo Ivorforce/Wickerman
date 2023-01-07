@@ -3,6 +3,7 @@ class_name NPC
 
 export var vegetable_type := 0
 export(PackedScene) var CorpseEntity
+onready var BloodEntity = preload("res://Scenery/Blood/Blood.tscn")
 
 export var max_health := 2
 var health := 2
@@ -38,7 +39,7 @@ func _process(delta):
 func _on_damage_somewhere(victim: Node2D, cause: Node2D):
 	if victim.global_position.distance_squared_to(global_position) < sight_distance * sight_distance:
 		if is_alert_time <= 0:
-			is_shocked_time = initial_shock_time * rand_range(0.8, 1.2)
+			is_shocked_time = initial_shock_time * rand_range(0.5, 1.0)
 		else:
 			is_shocked_time = 0.2
 		
@@ -57,6 +58,18 @@ func damage(damage: int, source: Node2D):
 		var corpse: Corpse = CorpseEntity.instance()
 		get_parent().add_child(corpse)
 		corpse.global_position = global_position
+		
+		bleed(1)
+		
 		queue_free()
 		
 		Deaths.emit_signal("on_death")
+	else:
+		bleed(0.5)
+
+func bleed(scale: float):
+	var blood: Node2D = BloodEntity.instance()
+	scale = rand_range(0.06, 0.09) * scale
+	blood.scale = Vector2(scale, scale)
+	get_parent().get_parent().get_node("Floor").add_child(blood)
+	blood.global_position = global_position

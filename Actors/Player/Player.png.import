@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wickerman.svg-1bbb1a147a2bdb41183a00d39a3e5d07.stex"
+path="res://.import/Player.png-33bfbb73a118a965819bb6ef622d5931.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/Wickerman/Wickerman.svg"
-dest_files=[ "res://.import/Wickerman.svg-1bbb1a147a2bdb41183a00d39a3e5d07.stex" ]
+source_file="res://Actors/Player/Player.png"
+dest_files=[ "res://.import/Player.png-33bfbb73a118a965819bb6ef622d5931.stex" ]
 
 [params]
 

@@ -3,12 +3,12 @@
 [ext_resource path="res://Actors/Attackable.gd" type="Script" id=1]
 [ext_resource path="res://Actors/NPC/NPC.gd" type="Script" id=2]
 [ext_resource path="res://Shaders/AttackableMaterial.tres" type="Material" id=3]
-[ext_resource path="res://Actors/NPC/Pumpkin/Pumpkin.svg" type="Texture" id=4]
+[ext_resource path="res://Actors/NPC/Pumpkin/Pumpkin.png" type="Texture" id=4]
 [ext_resource path="res://Actors/NPC/Pumpkin/Corpse/CorpsePumpkin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/NPC/RandomMovementController.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 29, 18 )
+extents = Vector2( 37, 23 )
 
 [node name="Pumpkin" type="KinematicBody2D"]
 collision_layer = 3
@@ -20,12 +20,12 @@ initial_shock_time = 0.7
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
-scale = Vector2( 0.15, 0.13 )
+position = Vector2( 1, -11 )
+scale = Vector2( 0.08, 0.08 )
 texture = ExtResource( 4 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 7 )
 shape = SubResource( 3 )
 
 [node name="MovementController" type="Node" parent="."]

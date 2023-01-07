@@ -13,8 +13,10 @@ script = ExtResource( 5 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
 
+[node name="Floor" type="Node2D" parent="."]
+
 [node name="SacrificeSlot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2, 104 )
+position = Vector2( 2, 165 )
 _path_wickerman = NodePath("../Entities/Wickerman")
 
 [node name="Borders" type="StaticBody2D" parent="."]
@@ -26,6 +28,7 @@ polygon = PoolVector2Array( -416, -416, 416, -416, 416, 416, -416, 416, -416, -4
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Wickerman" parent="Entities" instance=ExtResource( 2 )]
-position = Vector2( 2, 0 )
+position = Vector2( 5, 36 )
 
 [node name="WickermanDemandSpeech" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5, -414 )
