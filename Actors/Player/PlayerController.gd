@@ -83,7 +83,7 @@ func _physics_process(delta):
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
-		
+
 	var target_velocity = direction * speed
 	
 	if dragging_body != null:
@@ -94,7 +94,8 @@ func _physics_process(delta):
 		target_velocity *= _time_to_attack * 0.25
 
 	if _recovery_time > 0:
-		target_velocity *= 0.6 - _recovery_time * 3
+		target_velocity *= 0.4 - _recovery_time * 2
+		target_velocity += _look_direction * 1000 * _recovery_time
 		_recovery_time -= delta
 
 	_velocity += (target_velocity - _velocity) * friction
@@ -107,13 +108,12 @@ func _physics_process(delta):
 
 func attack():
 	_recovery_time = 0.2
-	
+
 	var attack_fx: PlayerAttackFX = PlayerAttackFXEntity.instance()
 	attack_fx.time_left = 0.2
 	attack_fx.knockback = _look_direction * 100
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + _look_direction * 60
-
 
 func _update_sprite() -> void:
 	animated_sprite.frame = _sprites[_look_direction]
