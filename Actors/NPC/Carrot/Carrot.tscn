@@ -16,6 +16,8 @@ extents = Vector2( 16, 30 )
 script = ExtResource( 2 )
 CorpseEntity = ExtResource( 5 )
 health = 1
+speed = 150
+friction = 0.15
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 3 )
