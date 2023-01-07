@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Corpse",
+"language": "GDScript",
+"path": "res://Actors/Corpse/Corpse.gd"
+} ]
+_global_script_class_icons={
+"Corpse": ""
+}
+
 [application]
 
 config/name="Wickerman"
