@@ -36,4 +36,22 @@ position = Vector2( 175, -108 )
 [node name="Onion" parent="Entities" instance=ExtResource( 6 )]
 position = Vector2( -160, -143 )
 
+[node name="Carrot2" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( -242, 269 )
+
+[node name="Pumpkin2" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 297, -60 )
+
+[node name="Onion2" parent="Entities" instance=ExtResource( 6 )]
+position = Vector2( -171, -39 )
+
+[node name="Carrot3" parent="Entities" instance=ExtResource( 5 )]
+position = Vector2( -321, 219 )
+
+[node name="Pumpkin3" parent="Entities" instance=ExtResource( 7 )]
+position = Vector2( 206, 18 )
+
+[node name="Onion3" parent="Entities" instance=ExtResource( 6 )]
+position = Vector2( -289, -87 )
+
 [node name="WickermanDemandSpeech" parent="." instance=ExtResource( 4 )]
