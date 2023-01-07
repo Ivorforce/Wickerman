@@ -13,6 +13,8 @@ export var corpse_drag_distance := 100
 # A factor that controls the character's inertia.
 export var friction = 0.18
 
+var _time_to_attack := -1.0
+
 # Mapping of direction to a sprite index.
 var _sprites := {Vector2.RIGHT: 1, Vector2.LEFT: 2, Vector2.UP: 3, Vector2.DOWN: 4}
 var _look_direction := Vector2.RIGHT
@@ -41,11 +43,8 @@ func handle_actions():
 		else:
 			dragging_body = null
 			
-	if Input.is_action_just_pressed("attack"):
-		var attack_fx: FX = FXEntity.instance()
-		attack_fx.time_left = 0.2
-		get_parent().get_parent().get_node("FX").add_child(attack_fx)
-		attack_fx.global_position = global_position + _look_direction * 60
+	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
+		_time_to_attack = 1		
 		
 func drag_corpse() -> bool:
 		var drag_direction := global_position - dragging_body.global_position
@@ -76,12 +75,26 @@ func _physics_process(delta):
 		if drag_corpse():
 			target_velocity = direction * (speed_when_dragging * (0.6 + sin(OS.get_ticks_msec() / 100) * 0.4))
 
+	if _time_to_attack > 0:
+		target_velocity *= 0.1 + _time_to_attack * 0.3
+
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
 
+	if _time_to_attack > 0:
+		_time_to_attack -= delta
+		if _time_to_attack <= 0:
+			var attack_fx: FX = FXEntity.instance()
+			attack_fx.time_left = 0.2
+			get_parent().get_parent().get_node("FX").add_child(attack_fx)
+			attack_fx.global_position = global_position + _look_direction * 60
 
 # The code below updates the character's sprite to look in a specific direction.
 func _unhandled_input(event):
+	if _time_to_attack > 0:
+		# strafe
+		return
+		
 	if event.is_action_pressed("right"):
 		_look_direction = Vector2.RIGHT
 		_update_sprite()
