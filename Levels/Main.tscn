@@ -34,6 +34,7 @@ position = Vector2( 2034.14, 1205.72 )
 rotation = -2.35619
 
 [node name="SceneIndicator" parent="." instance=ExtResource( 1 )]
+visible = false
 
 [node name="FX" type="Node2D" parent="."]
 
