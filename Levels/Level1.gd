@@ -28,7 +28,19 @@ var warnings_left := 2
 
 
 func _ready():
-	for i in range(20):
+	spawn_veggies(30)
+	
+	for i in range(100):
+		var entity: Grass = FoliageEntity.instance()
+		entity.position = Vector2(rand_range(-2000, 2000), rand_range(-2000, 2000))
+		
+		if (entity.position.length() - 500.0) / 500.0 < randf():
+			continue  # Too near wickerman
+		
+		entities.add_child(entity)
+	
+func spawn_veggies(num: int):
+	for i in range(num):
 		var center := Vector2(rand_range(-1500, 1500), rand_range(-1500, 1500))
 		
 		if (center.length() - 100.0) / 500.0 < randf():
@@ -45,14 +57,6 @@ func _ready():
 			entity.global_position = center + Vector2(rand_range(-200, 200), rand_range(-200, 200))
 			entities.add_child(entity)
 
-	for i in range(100):
-		var entity: Grass = FoliageEntity.instance()
-		entity.position = Vector2(rand_range(-2000, 2000), rand_range(-2000, 2000))
-		
-		if (entity.position.length() - 500.0) / 500.0 < randf():
-			continue  # Too near wickerman
-		
-		entities.add_child(entity)
 
 func _process(delta):
 	if time_of_day >= 0.95 or time_until_end_day >= 0.0:
@@ -115,6 +119,8 @@ func end_day():
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 	post_process.screen_flash_s = 1.0
 	post_process.screen_shake_s = 1.0
+	
+	spawn_veggies(2)
 	
 	# Can't type hint for whatever reason
 	var wickerman = $"/root/Game/Level1/Entities/Wickerman"
