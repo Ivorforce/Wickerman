@@ -167,6 +167,7 @@ attack={
 2d_physics/layer_3="player"
 2d_physics/layer_4="enemyAttack"
 2d_physics/layer_5="playerAttack"
+2d_physics/layer_6="wickerman"
 
 [rendering]
 

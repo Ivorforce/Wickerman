@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenery/Foliage/Floor.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Wickerman/Wickerman.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Actors/Wickerman/SacrificeSlot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Actors/Wickerman/WickermanDemandSpeech.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=5]
 [ext_resource path="res://Scenery/Foliage/Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenery/Foliage/Stone1.tscn" type="PackedScene" id=7]
@@ -784,7 +783,3 @@ max_count = 50
 
 [node name="Tree36" parent="Entities" instance=ExtResource( 10 )]
 position = Vector2( -794, 762 )
-
-[node name="WickermanDemandImage" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 5, -414 )

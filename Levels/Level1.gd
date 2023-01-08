@@ -9,6 +9,7 @@ onready var FoliageEntity = preload("res://Scenery/Foliage/Grass.tscn")
 
 onready var EndScreen = preload("res://TitleScreen/EndScreen.tscn")
 
+	
 onready var entities = $Entities
 
 export var fire_hint_text_path: NodePath
@@ -17,6 +18,13 @@ onready var fire_hint_text: Label = get_node(fire_hint_text_path)
 var time_of_day := 0.0
 var time_until_warn_flash := 0.0
 var shown_fire_hint_text = false
+
+var time_until_end_day := -1.0
+var failure_reason = null
+
+
+var warnings_left := 2
+
 
 func _ready():
 	for i in range(20):
@@ -46,10 +54,7 @@ func _ready():
 		entities.add_child(entity)
 
 func _process(delta):
-	# 4m days
-	time_of_day += delta / (60.0 * 4.0)
-
-	if time_of_day >= 0.95:
+	if time_of_day >= 0.95 or time_until_end_day >= 0.0:
 		time_until_warn_flash -= delta
 		if time_until_warn_flash <= 0:
 			Freezer.freeze_s = 0.05
@@ -57,6 +62,15 @@ func _process(delta):
 			post_process.screen_flash_s = 0.05
 			post_process.screen_shake_s = 0.25
 			time_until_warn_flash = 1
+			
+	if time_until_end_day >= 0:
+		time_until_end_day -= delta
+		if time_until_end_day <= 0:
+			end_day()
+		return
+	
+	# 4m days
+	time_of_day += delta / (60.0 * 4.0)
 
 	if time_of_day >= 1:
 		die_of_cold()
@@ -83,6 +97,39 @@ func die_of_cold():
 	GameResults.text = "You froze to death.\nYou didn't last a single day."
 	get_tree().change_scene_to(EndScreen)
 
-func advance_next_day():
+func end_day_slowly(failure_reason):
+	self.failure_reason = failure_reason
+	time_until_end_day = 5
+
+func end_day():
+	if failure_reason != null:
+		GameResults.text = failure_reason + "\nYou didn't last a single day."
+		get_tree().change_scene_to(EndScreen)
+		return
+	
 	fire_hint_text.visible = false
-	pass
+	failure_reason = null
+	time_of_day = 0
+
+	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
+	post_process.screen_flash_s = 1.0
+	post_process.screen_shake_s = 1.0
+	
+	# Can't type hint for whatever reason
+	var wickerman = $"/root/Game/Level1/Entities/Wickerman"
+	var player = $"/root/Game/Level1/Entities/Player"
+
+	player.change_to_scythe()
+	wickerman.time_until_demand = 3.0
+	wickerman.demand_speech_bubble.set_text("The Wickerman is hungry.")
+
+func on_enrage():
+	if warnings_left < 1:
+		GameResults.text = "You enraged the Wickerman.\nYou didn't last a single day."
+		get_tree().change_scene_to(EndScreen)
+		return
+
+	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
+	post_process.screen_flash_s = 0.05
+	post_process.screen_shake_s = 0.25
+	warnings_left -= 1

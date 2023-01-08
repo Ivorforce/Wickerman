@@ -108,7 +108,7 @@ func _physics_process(delta):
 	
 	if dragging_body != null:
 		if drag_corpse():
-			target_velocity = direction * (speed_when_dragging * (0.8 + sin(OS.get_ticks_msec() / 100) * 0.2))
+			target_velocity = direction * (speed_when_dragging * (0.8 + sin(OS.get_ticks_msec() / 100.0) * 0.2))
 
 	if _time_to_attack > 0:
 		target_velocity *= _time_to_attack * 0.25
@@ -156,3 +156,7 @@ func change_to_torch():
 		
 	_summon_torch_time = 1.5
 	animated_sprite.animation = "attack"
+
+func change_to_scythe():
+	is_holding_torch = false
+	animated_sprite.animation = "default"
