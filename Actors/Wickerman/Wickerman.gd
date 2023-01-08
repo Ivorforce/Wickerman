@@ -8,19 +8,26 @@ onready var PumpkinEntity = preload("res://Actors/NPC/Pumpkin/Pumpkin.tscn")
 
 var current_demand: NPC = null
 
-onready var demand_speech_bubble = $"../../WickermanDemandSpeech"
+onready var demand_image_bubble = $"../../WickermanDemandImage"
+onready var demand_speech_bubble: DemandText = $"../../WickermanDemandText"
 
 
 func _ready():
 	next_demand()
 
 func next_demand():
-	var EntityType = [CarrotEntity, OnionEntity, PumpkinEntity][randi() % 3]
+	var vegetable_type := randi() % 3
+	var EntityType = [CarrotEntity, OnionEntity, PumpkinEntity][vegetable_type]
 	
 	current_demand = EntityType.instance()
 	current_demand.get_node("MovementController").queue_free()
 	current_demand.get_node("CollisionShape2D").queue_free()
-	demand_speech_bubble.add_child(current_demand)
+	demand_image_bubble.add_child(current_demand)
+
+	var text = "The Wickerman demands a carrot." if vegetable_type == 0 else \
+		"The Wickerman demands an onion." if vegetable_type == 1 else \
+		"The Wickerman demands a pumpkin."
+	demand_speech_bubble.set_text(text)
 
 func try_sacrifice(corpse: Corpse):
 	if current_demand == null:
@@ -29,7 +36,7 @@ func try_sacrifice(corpse: Corpse):
 	if current_demand.vegetable_type == corpse.vegetable_type:		
 		Freezer.next_freeze_s += 0.05
 		
-		var post_process: PostProcess = $"/root/Game/PostProcess"
+		var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 		post_process.screen_flash_s = 0.1
 		post_process.screen_shake_s = 0.2
 		
