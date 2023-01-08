@@ -44,10 +44,14 @@ func _process(delta):
 	time_of_day += delta / (60.0 * 4.0)
 
 	if time_of_day >= 1:
-		get_tree().change_scene_to(EndScreen)
+		die_of_cold()
 		return
 
 	var sun_pos = cos((time_of_day - 0.4) * PI / 1.25)
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 	post_process.colorization = Vector3(sun_pos, pow(sun_pos, 1.4), pow(sun_pos, 1.6))
 	post_process.saturation = min(1.0, sun_pos + 0.5)
+
+func die_of_cold():
+	GameResults.text = "You froze to death.\nYou didn't last a single day."
+	get_tree().change_scene_to(EndScreen)

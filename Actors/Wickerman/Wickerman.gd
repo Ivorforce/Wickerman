@@ -6,10 +6,14 @@ onready var OnionEntity = preload("res://Actors/NPC/Onion/Onion.tscn")
 onready var PumpkinEntity = preload("res://Actors/NPC/Pumpkin/Pumpkin.tscn")
 
 
-var current_demand: NPC = null
-
 onready var demand_image_bubble = $"../../WickermanDemandImage"
 onready var demand_speech_bubble: DemandText = $"../../WickermanDemandText"
+
+
+var current_demand: NPC = null
+
+var demand_for_satisfaction_count := 4
+var sacrifice_count := 0
 
 
 func _ready():

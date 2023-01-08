@@ -83,6 +83,7 @@ config/icon="res://icon.png"
 
 Freezer="*res://Levels/Freezer.gd"
 Deaths="*res://Levels/Deaths.gd"
+GameResults="*res://TitleScreen/GameResults.gd"
 
 [display]
 
