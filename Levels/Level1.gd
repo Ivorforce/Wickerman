@@ -129,6 +129,8 @@ func end_day():
 	player.change_to_scythe()
 	wickerman.time_until_demand = 4.0
 	wickerman.demand_speech_bubble.set_text("The Wickerman is hungry.")
+	
+	days_passed += 1
 
 func on_enrage():
 	if warnings_left < 1:
