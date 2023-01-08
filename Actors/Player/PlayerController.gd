@@ -130,7 +130,7 @@ func attack():
 	attack_fx.knockback = _look_direction * 100
 	attack_fx.source = self
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
-	attack_fx.global_position = global_position + Vector2(0, -40) + _look_direction * 60
+	attack_fx.global_position = global_position + Vector2(0, -40) + _look_direction * 30
 	
 	animated_sprite.animation = "default"
 
