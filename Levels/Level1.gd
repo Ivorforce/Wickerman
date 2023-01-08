@@ -40,7 +40,7 @@ func _process(delta):
 		get_tree().change_scene_to(EndScreen)
 		return
 
-	var sun_pos = cos((time_of_day - 0.4) * PI / 1.3)
+	var sun_pos = cos((time_of_day - 0.4) * PI / 1.25)
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 	post_process.colorization = Vector3(sun_pos, pow(sun_pos, 1.4), pow(sun_pos, 1.6))
 	post_process.saturation = min(1.0, sun_pos + 0.5)

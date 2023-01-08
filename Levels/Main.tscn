@@ -21,10 +21,6 @@ position = Vector2( 984, 536 )
 [node name="Player" parent="Level1/Entities" index="1" instance=ExtResource( 4 )]
 position = Vector2( 2, 165 )
 
-[node name="Tree6" parent="Level1/Entities" index="7"]
-position = Vector2( 1270, -1164 )
-scale = Vector2( 1.5, 1.5 )
-
 [node name="WickermanDemandText" type="Label" parent="Level1"]
 unique_name_in_owner = true
 margin_left = -438.0
