@@ -71,14 +71,16 @@ func handle_actions():
 
 func drag_corpse() -> bool:
 	var drag_direction := global_position - dragging_body.global_position
+	var distance_sq := drag_direction.length_squared()
 	
-	if drag_direction.length() < corpse_drag_distance:
+	if distance_sq < (corpse_drag_distance * 0.7) * (corpse_drag_distance * 0.7):
 		return false
-		
-	if drag_direction.length() > 1:
-		drag_direction = drag_direction.normalized()
 	
-	dragging_body._velocity += (drag_direction * corpse_drag_speed - dragging_body._velocity) * 0.05
+	if distance_sq > corpse_drag_distance * corpse_drag_distance:
+		if distance_sq > 1:
+			drag_direction = drag_direction.normalized()
+		
+		dragging_body._velocity += (drag_direction * corpse_drag_speed - dragging_body._velocity) * 0.05
 	
 	return true
 
@@ -102,7 +104,7 @@ func _physics_process(delta):
 	
 	if dragging_body != null:
 		if drag_corpse():
-			target_velocity = direction * (speed_when_dragging * (0.6 + sin(OS.get_ticks_msec() / 100) * 0.4))
+			target_velocity = direction * (speed_when_dragging * (0.8 + sin(OS.get_ticks_msec() / 100) * 0.2))
 
 	if _time_to_attack > 0:
 		target_velocity *= _time_to_attack * 0.25
