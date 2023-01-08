@@ -6,6 +6,8 @@ onready var PumpkinEntity = preload("res://Actors/NPC/Pumpkin/Pumpkin.tscn")
 
 onready var FoliageEntity = preload("res://Scenery/Foliage/Grass.tscn")
 
+onready var EndScreen = preload("res://TitleScreen/EndScreen.tscn")
+
 onready var entities = $Entities
 
 var time_of_day := 0.0
@@ -33,6 +35,10 @@ func _ready():
 func _process(delta):
 	# 4m days
 	time_of_day += delta / (60.0 * 4.0)
+
+	if time_of_day >= 1:
+		get_tree().change_scene_to(EndScreen)
+		return
 
 	var sun_pos = cos((time_of_day - 0.4) * PI / 1.3)
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
