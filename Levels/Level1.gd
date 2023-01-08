@@ -11,6 +11,7 @@ onready var EndScreen = preload("res://TitleScreen/EndScreen.tscn")
 onready var entities = $Entities
 
 var time_of_day := 0.0
+var time_until_warn_flash := 0.0
 
 func _ready():
 	for i in range(20):
@@ -42,6 +43,15 @@ func _ready():
 func _process(delta):
 	# 4m days
 	time_of_day += delta / (60.0 * 4.0)
+
+	if time_of_day >= 0.95:
+		time_until_warn_flash -= delta
+		if time_until_warn_flash <= 0:
+			Freezer.freeze_s = 0.05
+			var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
+			post_process.screen_flash_s = 0.05
+			post_process.screen_shake_s = 0.25
+			time_until_warn_flash = 1
 
 	if time_of_day >= 1:
 		die_of_cold()
