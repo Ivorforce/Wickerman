@@ -74,8 +74,8 @@ func _process(delta):
 			end_day()
 		return
 	
-	# 4m days
-	time_of_day += delta / (60.0 * 4.0)
+	# 3m days
+	time_of_day += delta / (60.0 * 3.0)
 
 	if time_of_day >= 1:
 		die_of_cold()
