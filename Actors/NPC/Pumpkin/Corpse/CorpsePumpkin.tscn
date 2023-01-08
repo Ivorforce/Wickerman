@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Actors/Attackable.gd" type="Script" id=1]
 [ext_resource path="res://Shaders/AttackableMaterial.tres" type="Material" id=2]
-[ext_resource path="res://Actors/NPC/Pumpkin/Pumpkin.png" type="Texture" id=3]
+[ext_resource path="res://Actors/NPC/Pumpkin/Corpse/PumpkinCorpse.png" type="Texture" id=3]
 [ext_resource path="res://Actors/NPC/Corpse.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
