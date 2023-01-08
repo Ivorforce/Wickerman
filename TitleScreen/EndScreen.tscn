@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Montserrat-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui_theme.tres" type="Theme" id=2]
 [ext_resource path="res://TitleScreen/StartGame.gd" type="Script" id=3]
 [ext_resource path="res://TitleScreen/QuitGame.gd" type="Script" id=4]
 [ext_resource path="res://TitleScreen/EndScreen.gd" type="Script" id=5]
+[ext_resource path="res://Sounds/character_death_scream.mp3" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -55,6 +56,10 @@ rect_pivot_offset = Vector2( 537, 110 )
 size_flags_vertical = 3
 text = "Quit Game"
 script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]
