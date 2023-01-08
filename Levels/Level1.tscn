@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenery/Foliage/Floor.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Wickerman/Wickerman.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenery/Foliage/Tree.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenery/Foliage/Stone1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenery/Foliage/Stone2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenery/Foliage/FoliageSpawner.tscn" type="PackedScene" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 5 )
@@ -305,6 +306,246 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Stone7" parent="Entities" instance=ExtResource( 8 )]
 position = Vector2( -590, 1578 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Wheat" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -288, 71 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat12" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1094, 994 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat13" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -523, 1320 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat30" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -662, 1374 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat31" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -398, 1498 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat32" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -201, 1260 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat33" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -577, 689 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat34" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1427, 536 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat14" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -228, 968 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat15" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -717, 963 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat16" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -188, 1523 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat17" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -467, 1695 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat18" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -747, 1817 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat19" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -262, 1871 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat20" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1418, 1714 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat21" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1837, 1358 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat22" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1829, 1804 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat23" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1037, 1266 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat24" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1651, 701 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat25" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1049, 582 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat26" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1479, 209 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat27" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1299, -395 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat39" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1055, 3 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat40" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1786, -110 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat2" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -672, -609 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat3" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1083, -826 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat4" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1603, -740 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat5" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1056, -1294 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat35" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -868, -1090 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat36" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1268, -1036 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat28" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1183, -1192 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat29" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1052, -1017 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat6" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1667, -1589 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat37" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1829, -1802 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat38" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -541, -1708 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat7" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -688, -1770 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat8" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 932, -1146 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat9" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1382, -1187 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat10" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1378, -1442 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Wheat11" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1000, -1463 )
+entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
 
 [node name="WickermanDemandImage" parent="." instance=ExtResource( 4 )]
 visible = false
