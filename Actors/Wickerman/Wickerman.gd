@@ -64,7 +64,7 @@ func light_on_fire():
 		game.end_day_slowly(null)
 		
 		sacrifice_count = 0
-		demand_for_satisfaction_count += randi() % 3 + 1
+		demand_for_satisfaction_count += randi() % 2 + 1
 	else:
 		demand_speech_bubble.set_text("The Wickerman is dissatisfied.")
 		game.end_day_slowly("The Wickerman punished you.")
