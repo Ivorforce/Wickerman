@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenery/Foliage/Floor.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Wickerman/Wickerman.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenery/Foliage/Stone1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenery/Foliage/Stone2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenery/Foliage/FoliageSpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenery/Objects/Scarecrow.tscn" type="PackedScene" id=10]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 5 )
@@ -780,6 +781,9 @@ position = Vector2( 1868, 682 )
 entity_path = "res://Scenery/Foliage/Grass.tscn"
 min_count = 10
 max_count = 50
+
+[node name="Tree36" parent="Entities" instance=ExtResource( 10 )]
+position = Vector2( -794, 762 )
 
 [node name="WickermanDemandImage" parent="." instance=ExtResource( 4 )]
 visible = false
