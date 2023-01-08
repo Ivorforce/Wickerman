@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/SceneIndicator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Shaders/PostProcessEffects.tres" type="Material" id=6]
 [ext_resource path="res://Levels/Montserrat-SemiBold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Levels/DemandText.gd" type="Script" id=8]
+[ext_resource path="res://Sounds/lightning_impact.mp3" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -72,6 +73,9 @@ material = ExtResource( 6 )
 margin_right = 2035.0
 margin_bottom = 1205.0
 script = ExtResource( 5 )
+
+[node name="LightningSound" type="AudioStreamPlayer" parent="CanvasLayer/PostProcess"]
+stream = ExtResource( 9 )
 
 [node name="FireHint" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0

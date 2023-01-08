@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lightning_impact.mp3-d14a5d32d98c20e45274ff43de5e8eb6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/lightning_impact.mp3"
+dest_files=[ "res://.import/lightning_impact.mp3-d14a5d32d98c20e45274ff43de5e8eb6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

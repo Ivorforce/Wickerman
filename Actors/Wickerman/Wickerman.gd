@@ -42,7 +42,7 @@ func try_sacrifice(corpse: Corpse):
 		Freezer.next_freeze_s += 0.5
 	else:
 		var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
-		post_process.screen_flash_s = 0.2
+		post_process.flash(0.2)
 		post_process.screen_shake_s = 0.5
 		sacrifice_count += 1
 		next_demand()
@@ -53,7 +53,7 @@ func light_on_fire():
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 	var game: Level1 = $"/root/Game/Level1"
 	
-	post_process.screen_flash_s = 0.1
+	post_process.flash(0.1)
 	post_process.screen_shake_s = 0.2
 	
 	demand_speech_bubble.set_text("")

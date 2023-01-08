@@ -10,6 +10,10 @@ var time_until_shake_dir = 0.0
 var saturation := 1.0
 var colorization := Vector3(1.0, 1.0, 1.0)
 
+func flash(secs: float):
+	screen_flash_s += secs
+	$LightningSound.play()
+
 func _process(delta):
 	screen_flash_s = max(screen_flash_s - delta, 0.0)
 	screen_shake_s = max(screen_shake_s - delta, 0.0)

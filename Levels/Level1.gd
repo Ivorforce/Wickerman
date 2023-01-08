@@ -64,7 +64,7 @@ func _process(delta):
 		if time_until_warn_flash <= 0:
 			Freezer.freeze_s = 0.05
 			var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
-			post_process.screen_flash_s = 0.05
+			post_process.flash(0.05)
 			post_process.screen_shake_s = 0.25
 			time_until_warn_flash = 1
 			
@@ -117,7 +117,7 @@ func end_day():
 	time_of_day = 0
 
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
-	post_process.screen_flash_s = 1.0
+	post_process.flash(1.0)
 	post_process.screen_shake_s = 1.0
 	
 	spawn_veggies(2)
@@ -137,7 +137,7 @@ func on_enrage():
 		return
 
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
-	post_process.screen_flash_s = 0.05
+	post_process.flash(0.05)
 	post_process.screen_shake_s = 0.25
 	warnings_left -= 1
 
