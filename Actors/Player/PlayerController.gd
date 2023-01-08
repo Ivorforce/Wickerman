@@ -53,6 +53,7 @@ func handle_actions():
 		
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
 		_time_to_attack = 0.8
+		animated_sprite.animation = "attack"
 	
 	if _time_to_attack <= 0 and _recovery_time <= 0:
 		if Input.is_action_pressed("right"):
@@ -128,6 +129,8 @@ func attack():
 	attack_fx.source = self
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + Vector2(0, -40) + _look_direction * 60
+	
+	animated_sprite.animation = "default"
 
 func _update_sprite() -> void:
 	animated_sprite.frame = _sprites[_look_direction]
