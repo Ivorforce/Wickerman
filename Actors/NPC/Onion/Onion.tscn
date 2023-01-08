@@ -11,6 +11,7 @@
 extents = Vector2( 16, 9 )
 
 [node name="Onion" type="KinematicBody2D"]
+position = Vector2( 0, -9 )
 collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 1

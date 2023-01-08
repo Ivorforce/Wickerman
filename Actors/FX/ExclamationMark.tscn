@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Actors/FX/exclamation_mark.png" type="Texture" id=1]
+[ext_resource path="res://Actors/FX/ExclamationMark.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 1 )

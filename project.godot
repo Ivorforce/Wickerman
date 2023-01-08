@@ -24,6 +24,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Levels/DemandText.gd"
 }, {
+"base": "Node2D",
+"class": "ExclamationMark",
+"language": "GDScript",
+"path": "res://Actors/FX/ExclamationMark.gd"
+}, {
+"base": "Node2D",
+"class": "Grass",
+"language": "GDScript",
+"path": "res://Scenery/Foliage/Grass.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "NPC",
 "language": "GDScript",
@@ -53,6 +63,8 @@ _global_script_class_icons={
 "Attackable": "",
 "Corpse": "",
 "DemandText": "",
+"ExclamationMark": "",
+"Grass": "",
 "NPC": "",
 "PlayerAttackFX": "",
 "PlayerController": "",

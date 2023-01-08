@@ -11,6 +11,7 @@
 extents = Vector2( 37, 23 )
 
 [node name="Pumpkin" type="KinematicBody2D"]
+position = Vector2( 0, -23 )
 collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 2

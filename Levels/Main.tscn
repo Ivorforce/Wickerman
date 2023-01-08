@@ -18,6 +18,9 @@ font_data = ExtResource( 7 )
 [node name="Level1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 984, 536 )
 
+[node name="Player" parent="Level1/Entities" index="1" instance=ExtResource( 4 )]
+position = Vector2( 2, 165 )
+
 [node name="WickermanDemandText" type="Label" parent="Level1"]
 unique_name_in_owner = true
 margin_left = -438.0
@@ -26,12 +29,10 @@ margin_right = 467.0
 margin_bottom = 303.0
 custom_fonts/font = SubResource( 1 )
 text = "The wickerman demands an onion."
+align = 1
 script = ExtResource( 8 )
 
 [node name="Tween" type="Tween" parent="Level1/WickermanDemandText"]
-
-[node name="Player" parent="Level1/Entities" index="1" instance=ExtResource( 4 )]
-position = Vector2( 2, 165 )
 
 [node name="Particles" type="Node2D" parent="."]
 position = Vector2( 0, 6.15164 )

@@ -5,6 +5,8 @@ export var vegetable_type := 0
 export(PackedScene) var CorpseEntity
 onready var BloodEntity = preload("res://Scenery/Blood/Blood.tscn")
 
+onready var ExclamationMarkEntity := preload("res://Actors/FX/ExclamationMark.tscn")
+
 export var max_health := 2
 var health := 2
 
@@ -38,20 +40,12 @@ func _process(delta):
 
 func _on_damage_somewhere(victim: Node2D, cause: Node2D):
 	if victim.global_position.distance_squared_to(global_position) < sight_distance * sight_distance:
-		if is_alert_time <= 0:
-			is_shocked_time = initial_shock_time * rand_range(0.5, 1.0)
-		else:
-			is_shocked_time = 0.2
-		
-		is_scared_target = cause
-		is_alert_time = max_alert_time
+		be_scared_of(cause)
 
 func damage(damage: int, source: Node2D):
 	health -= damage
 	
-	is_scared_target = source
-	is_alert_time = max_alert_time
-	
+	be_scared_of(source)
 	Deaths.emit_signal("on_damage", self, source)
 	
 	if health <= 0:
@@ -66,6 +60,22 @@ func damage(damage: int, source: Node2D):
 		Deaths.emit_signal("on_death")
 	else:
 		bleed(0.5)
+
+
+func be_scared_of(cause: Node2D):
+	if is_alert_time <= 0:
+		is_shocked_time = initial_shock_time * rand_range(0.5, 1.0)
+	else:
+		is_shocked_time = 0.2
+	
+	is_scared_target = cause
+	is_alert_time = max_alert_time
+	
+	var exclamation_mark := ExclamationMarkEntity.instance()
+	exclamation_mark.time_until_death = max(is_shocked_time - 0.05, 0.2)
+	add_child(exclamation_mark)
+	exclamation_mark.global_position = global_position - Vector2(0, 80)
+
 
 func bleed(scale: float):
 	var blood: Node2D = BloodEntity.instance()
