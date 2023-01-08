@@ -16,6 +16,7 @@ export var fire_hint_text_path: NodePath
 onready var fire_hint_text: Label = get_node(fire_hint_text_path)
 
 var time_of_day := 0.0
+var days_passed = 0
 var time_until_warn_flash := 0.0
 var shown_fire_hint_text = false
 
@@ -94,7 +95,7 @@ func _process(delta):
 	post_process.saturation = min(1.0, sun_pos + 0.5)
 
 func die_of_cold():
-	GameResults.text = "You froze to death.\nYou didn't last a single day."
+	GameResults.text = "You froze to death." + days_lasted_text()
 	get_tree().change_scene_to(EndScreen)
 
 func end_day_slowly(failure_reason):
@@ -103,7 +104,7 @@ func end_day_slowly(failure_reason):
 
 func end_day():
 	if failure_reason != null:
-		GameResults.text = failure_reason + "\nYou didn't last a single day."
+		GameResults.text = failure_reason + days_lasted_text()
 		get_tree().change_scene_to(EndScreen)
 		return
 	
@@ -120,12 +121,12 @@ func end_day():
 	var player = $"/root/Game/Level1/Entities/Player"
 
 	player.change_to_scythe()
-	wickerman.time_until_demand = 3.0
+	wickerman.time_until_demand = 4.0
 	wickerman.demand_speech_bubble.set_text("The Wickerman is hungry.")
 
 func on_enrage():
 	if warnings_left < 1:
-		GameResults.text = "You enraged the Wickerman.\nYou didn't last a single day."
+		GameResults.text = "You enraged the Wickerman." + days_lasted_text()
 		get_tree().change_scene_to(EndScreen)
 		return
 
@@ -133,3 +134,11 @@ func on_enrage():
 	post_process.screen_flash_s = 0.05
 	post_process.screen_shake_s = 0.25
 	warnings_left -= 1
+
+func days_lasted_text() -> String:
+	if days_passed == 0: 
+		return "\nYou didn't last a single day."
+	elif days_passed == 1:
+		return "\nYou lasted a single day."
+	else:
+		return "\nYou lasted %d days." % days_passed

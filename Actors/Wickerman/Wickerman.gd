@@ -4,7 +4,7 @@ class_name Wickerman
 
 onready var demand_speech_bubble: DemandText = $"../../WickermanDemandText"
 
-var current_demand: NPC = null
+var current_demand_type = null
 
 var demand_for_satisfaction_count := 4
 var sacrifice_count := 0
@@ -12,7 +12,7 @@ var time_until_demand := -1.0
 
 
 func _ready():
-	time_until_demand = 3.0
+	time_until_demand = 4.0
 	demand_speech_bubble.set_text("The Wickerman awakens.")
 
 func _process(delta):
@@ -22,27 +22,29 @@ func _process(delta):
 			next_demand()
 
 func next_demand():
-	var vegetable_type := randi() % 3
+	current_demand_type = randi() % 3
 
-	var text = "The Wickerman demands a carrot." if vegetable_type == 0 else \
-		"The Wickerman demands an onion." if vegetable_type == 1 else \
+	var text = "The Wickerman demands a carrot." if current_demand_type == 0 else \
+		"The Wickerman demands an onion." if current_demand_type == 1 else \
 		"The Wickerman demands a pumpkin."
 	demand_speech_bubble.set_text(text)
 
 func try_sacrifice(corpse: Corpse):
-	if current_demand == null:
+	if current_demand_type == null:
 		return
-	
-	if current_demand.vegetable_type == corpse.vegetable_type:		
-		Freezer.next_freeze_s += 0.05
+
+	var game: Level1 = $"/root/Game/Level1"
 		
+	corpse.queue_free()
+
+	if current_demand_type != corpse.vegetable_type:		
+		game.on_enrage()
+		Freezer.next_freeze_s += 0.5
+	else:
 		var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
-		post_process.screen_flash_s = 0.1
-		post_process.screen_shake_s = 0.2
-		
-		corpse.queue_free()
-		
-		current_demand.queue_free()
+		post_process.screen_flash_s = 0.2
+		post_process.screen_shake_s = 0.5
+		sacrifice_count += 1
 		next_demand()
 
 func light_on_fire():
@@ -53,7 +55,7 @@ func light_on_fire():
 	post_process.screen_shake_s = 0.2
 	
 	demand_speech_bubble.set_text("")
-	current_demand = null
+	current_demand_type = null
 	
 	if sacrifice_count >= demand_for_satisfaction_count:
 		demand_speech_bubble.set_text("The Wickerman is satisfied.")

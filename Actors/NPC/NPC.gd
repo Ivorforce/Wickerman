@@ -54,18 +54,20 @@ func damage(damage: int, source: Node2D):
 	Deaths.emit_signal("on_damage", self, source)
 	
 	if health <= 0:
-		var corpse: Corpse = CorpseEntity.instance()
-		get_parent().add_child(corpse)
-		corpse.global_position = global_position
-		
-		bleed(1)
-		
-		queue_free()
-		
-		Deaths.emit_signal("on_death")
+		call_deferred("die")
 	else:
 		bleed(0.5)
 
+func die():
+	var corpse: Corpse = CorpseEntity.instance()
+	get_parent().add_child(corpse)
+	corpse.global_position = global_position
+	
+	bleed(1)
+	
+	queue_free()
+	
+	Deaths.emit_signal("on_death")
 
 func be_scared_of(cause: Node2D):
 	if is_alert_time <= 0:
