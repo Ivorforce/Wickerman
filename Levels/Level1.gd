@@ -30,6 +30,10 @@ func _ready():
 	for i in range(500):
 		var entity: Grass = FoliageEntity.instance()
 		entity.global_position = Vector2(rand_range(-2000, 2000), rand_range(-2000, 2000))
+		
+		if (entity.global_position.length() - 500.0) / 500.0 < randf():
+			continue  # Too near wickerman
+		
 		entities.add_child(entity)
 
 func _process(delta):

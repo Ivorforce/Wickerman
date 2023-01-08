@@ -24,7 +24,7 @@ stretch_mode = 2
 [node name="Floor" type="Node2D" parent="."]
 
 [node name="SacrificeSlot" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2, 165 )
+position = Vector2( -2, 102 )
 _path_wickerman = NodePath("../Entities/Wickerman")
 
 [node name="Borders" type="StaticBody2D" parent="."]
@@ -36,7 +36,6 @@ polygon = PoolVector2Array( -416, -416, 416, -416, 416, 416, -416, 416, -416, -4
 [node name="Entities" type="YSort" parent="."]
 
 [node name="Wickerman" parent="Entities" instance=ExtResource( 2 )]
-position = Vector2( 5, 36 )
 
 [node name="Tree" parent="Entities" instance=ExtResource( 6 )]
 position = Vector2( 1520, 841 )
