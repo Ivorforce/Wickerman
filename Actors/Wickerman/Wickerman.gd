@@ -9,6 +9,7 @@ onready var PumpkinEntity = preload("res://Actors/NPC/Pumpkin/Pumpkin.tscn")
 onready var demand_image_bubble = $"../../WickermanDemandImage"
 onready var demand_speech_bubble: DemandText = $"../../WickermanDemandText"
 
+onready var game: Level1
 
 var current_demand: NPC = null
 

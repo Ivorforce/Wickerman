@@ -12,4 +12,3 @@ func set_text(text: String):
 		0, 1, 3, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT
 	)
 	$Tween.start()
-

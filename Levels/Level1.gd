@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level1
 
 onready var CarrotEntity = preload("res://Actors/NPC/Carrot/Carrot.tscn")
 onready var OnionEntity = preload("res://Actors/NPC/Onion/Onion.tscn")
@@ -10,8 +11,12 @@ onready var EndScreen = preload("res://TitleScreen/EndScreen.tscn")
 
 onready var entities = $Entities
 
+export var fire_hint_text_path: NodePath
+onready var fire_hint_text: Label = get_node(fire_hint_text_path)
+
 var time_of_day := 0.0
 var time_until_warn_flash := 0.0
+var shown_fire_hint_text = false
 
 func _ready():
 	for i in range(20):
@@ -57,6 +62,18 @@ func _process(delta):
 		die_of_cold()
 		return
 
+	if time_of_day >= 0.9 and not shown_fire_hint_text:
+		var tween: Tween = fire_hint_text.get_child(0)
+		tween.stop_all()
+		
+		fire_hint_text.percent_visible = 0
+		tween.interpolate_property(
+			fire_hint_text, "percent_visible",
+			0, 1, 3, Tween.TRANS_CUBIC
+		)
+		tween.start()
+		shown_fire_hint_text = true
+
 	var sun_pos = cos((time_of_day - 0.4) * PI / 1.25)
 	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
 	post_process.colorization = Vector3(sun_pos, pow(sun_pos, 1.4), pow(sun_pos, 1.6))
@@ -65,3 +82,7 @@ func _process(delta):
 func die_of_cold():
 	GameResults.text = "You froze to death.\nYou didn't last a single day."
 	get_tree().change_scene_to(EndScreen)
+
+func advance_next_day():
+	fire_hint_text.visible = false
+	pass
