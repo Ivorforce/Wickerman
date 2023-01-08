@@ -16,6 +16,9 @@ func _ready():
 	for i in range(20):
 		var center := Vector2(rand_range(-1500, 1500), rand_range(-1500, 1500))
 		
+		if (center.length() - 100.0) / 500.0 < randf():
+			continue  # Too near wickerman
+			
 		var vegetable_type := randi() % 3
 		var EntityType = [CarrotEntity, OnionEntity, PumpkinEntity][vegetable_type]
 		var max_num = 10 if vegetable_type == 0 else \

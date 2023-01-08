@@ -9,9 +9,13 @@ onready var ExclamationMarkEntity := preload("res://Actors/FX/ExclamationMark.ts
 
 export var max_health := 2
 var health := 2
+export var group := ""
 
 export var max_alert_time := 10.0
-export var sight_distance := 1000.0
+export var sight_distance := 500.0
+export var hear_distance := 1000.0
+export var personal_space_distance := 70.0
+export var huddle_distance := 400.0
 export var initial_shock_time := 1.0
 
 export var speed := 100.0
@@ -39,7 +43,7 @@ func _process(delta):
 			is_scared_target = null
 
 func _on_damage_somewhere(victim: Node2D, cause: Node2D):
-	if victim.global_position.distance_squared_to(global_position) < sight_distance * sight_distance:
+	if victim.global_position.distance_squared_to(global_position) < hear_distance * hear_distance:
 		be_scared_of(cause)
 
 func damage(damage: int, source: Node2D):

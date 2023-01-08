@@ -37,9 +37,7 @@ func _physics_process(delta: float):
 	if (time_since_reorientation > 0.1) if direction.length_squared() < 20 * 20 else (time_since_reorientation > 2):
 		direction = Vector2.ZERO
 		if randf() < 0.02:
-			target = parent.global_position + Vector2(rand_range(-100, 100), rand_range(-100, 100))
-			time_since_reorientation = 0.0
-			direction = target - parent.global_position
+			direction = find_new_target()
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
@@ -48,3 +46,38 @@ func _physics_process(delta: float):
 	parent._velocity += (target_velocity - parent._velocity) * parent.friction
 	parent._velocity = parent.move_and_slide(parent._velocity)
 
+
+func find_new_target() -> Vector2:
+	var parent: NPC = get_parent()
+	
+	# boids-like algorithm
+	var too_close_n := 0
+	var too_close_v := Vector2.ZERO
+	
+	var in_range_n := 1
+	var in_range_v := parent.global_position
+	
+	for entity in get_tree().get_nodes_in_group(parent.group):
+		if entity == parent:
+			continue
+	
+		var distance_sq: float = entity.global_position.distance_squared_to(parent.global_position)
+		
+		if distance_sq < parent.personal_space_distance * parent.personal_space_distance:
+			too_close_v += entity.global_position
+			too_close_n += 1
+		elif distance_sq < parent.huddle_distance * parent.huddle_distance:
+			in_range_v += entity.global_position
+			in_range_n += 1
+
+	
+	target = in_range_v / in_range_n + Vector2(rand_range(-100, 100), rand_range(-100, 100))
+	
+	if too_close_n > 0 or false:
+		# Remove any movement toward stuff that is too close
+		var vector := target - parent.global_position 
+		vector -= (too_close_v / too_close_n - parent.global_position) * 3
+		target = vector + parent.global_position
+	
+	time_since_reorientation = 0.0
+	return target - parent.global_position

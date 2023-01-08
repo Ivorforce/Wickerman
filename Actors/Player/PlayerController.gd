@@ -1,7 +1,12 @@
 extends KinematicBody2D
 class_name PlayerController
 
-var PlayerAttackFXEntity := preload("res://Actors/FX/PlayerAttackFX.tscn")
+var PlayerAttackFXEntities := {
+	Vector2.UP: preload("res://Actors/FX/PlayerAttackFXTop.tscn"),
+	Vector2.DOWN: preload("res://Actors/FX/PlayerAttackFXBottom.tscn"),
+	Vector2.LEFT: preload("res://Actors/FX/PlayerAttackFXLeft.tscn"),
+	Vector2.RIGHT: preload("res://Actors/FX/PlayerAttackFXRight.tscn"),
+}
 
 
 # Movement speed in pixels per second.
@@ -117,12 +122,12 @@ func _physics_process(delta):
 func attack():
 	_recovery_time = 0.2
 
-	var attack_fx: PlayerAttackFX = PlayerAttackFXEntity.instance()
+	var attack_fx: PlayerAttackFX = PlayerAttackFXEntities[_look_direction].instance()
 	attack_fx.time_left = 0.2
 	attack_fx.knockback = _look_direction * 100
 	attack_fx.source = self
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
-	attack_fx.global_position = global_position + _look_direction * 60
+	attack_fx.global_position = global_position + Vector2(0, -40) + _look_direction * 60
 
 func _update_sprite() -> void:
 	animated_sprite.frame = _sprites[_look_direction]

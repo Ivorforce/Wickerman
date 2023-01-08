@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AttackFX.svg-23778f76a2a32e74466b787e9f7e7183.stex"
+path="res://.import/attack-bottom.png-85920f7bdd255e91e9c297c61768c5b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Actors/FX/AttackFX.svg"
-dest_files=[ "res://.import/AttackFX.svg-23778f76a2a32e74466b787e9f7e7183.stex" ]
+source_file="res://Actors/FX/attack-bottom.png"
+dest_files=[ "res://.import/attack-bottom.png-85920f7bdd255e91e9c297c61768c5b2.stex" ]
 
 [params]
 

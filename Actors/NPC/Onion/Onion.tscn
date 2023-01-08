@@ -10,11 +10,15 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 9 )
 
-[node name="Onion" type="KinematicBody2D"]
+[node name="Onion" type="KinematicBody2D" groups=["onions"]]
 collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 1
 CorpseEntity = ExtResource( 5 )
+group = "onions"
+sight_distance = 800.0
+hear_distance = 700.0
+personal_space_distance = 120.0
 initial_shock_time = 0.8
 
 [node name="Sprite" type="Sprite" parent="."]

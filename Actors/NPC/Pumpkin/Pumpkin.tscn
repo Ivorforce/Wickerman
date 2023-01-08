@@ -10,12 +10,16 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 37, 23 )
 
-[node name="Pumpkin" type="KinematicBody2D"]
+[node name="Pumpkin" type="KinematicBody2D" groups=["pumpkins"]]
 collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 2
 CorpseEntity = ExtResource( 5 )
 max_health = 4
+group = "pumpkins"
+hear_distance = 300.0
+personal_space_distance = 80.0
+huddle_distance = 300.0
 initial_shock_time = 0.7
 
 [node name="Sprite" type="Sprite" parent="."]
