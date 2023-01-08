@@ -16,6 +16,7 @@ script = ExtResource( 2 )
 vegetable_type = 2
 CorpseEntity = ExtResource( 5 )
 max_health = 4
+blood_scale = 1.8
 group = "pumpkins"
 hear_distance = 300.0
 personal_space_distance = 80.0

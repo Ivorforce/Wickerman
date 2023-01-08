@@ -15,6 +15,7 @@ collision_layer = 3
 script = ExtResource( 2 )
 CorpseEntity = ExtResource( 5 )
 max_health = 1
+blood_scale = 0.8
 group = "carrots"
 sight_distance = 1200.0
 initial_shock_time = 1.5

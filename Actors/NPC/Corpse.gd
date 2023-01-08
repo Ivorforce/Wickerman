@@ -3,6 +3,7 @@ class_name Corpse
 
 export var vegetable_type := 0
 var is_protected := false
+export var blood_scale := 1.0
 
 export var friction := 0.8
 var _velocity := Vector2.ZERO
@@ -28,7 +29,7 @@ func _physics_process(delta):
 
 func bleed(scale: float):
 	var blood: Node2D = BloodEntity.instance()
-	scale = rand_range(0.06, 0.09) * scale
+	scale *= rand_range(0.06, 0.09) * blood_scale
 	blood.scale = Vector2(scale, scale)
 	get_parent().get_parent().get_node("Floor").add_child(blood)
 	blood.global_position = global_position

@@ -12,6 +12,7 @@ extents = Vector2( 17, 17 )
 collision_layer = 3
 script = ExtResource( 3 )
 vegetable_type = 1
+blood_scale = 1.2
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 4 )

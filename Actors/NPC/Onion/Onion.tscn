@@ -15,6 +15,7 @@ collision_layer = 3
 script = ExtResource( 2 )
 vegetable_type = 1
 CorpseEntity = ExtResource( 5 )
+blood_scale = 1.1
 group = "onions"
 sight_distance = 800.0
 hear_distance = 700.0

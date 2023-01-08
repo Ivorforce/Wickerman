@@ -9,6 +9,7 @@ onready var ExclamationMarkEntity := preload("res://Actors/FX/ExclamationMark.ts
 
 export var max_health := 2
 var health := 2
+export var blood_scale := 1.0
 export var group := ""
 
 export var max_alert_time := 10.0
@@ -83,7 +84,7 @@ func be_scared_of(cause: Node2D):
 
 func bleed(scale: float):
 	var blood: Node2D = BloodEntity.instance()
-	scale = rand_range(0.06, 0.09) * scale
+	scale = rand_range(0.06, 0.09) * scale * blood_scale
 	blood.scale = Vector2(scale, scale)
 	get_parent().get_parent().get_node("Floor").add_child(blood)
 	blood.global_position = global_position
