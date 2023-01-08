@@ -6,8 +6,8 @@ code = "shader_type canvas_item;
 uniform float whitening;
 uniform vec2 tex_offset;
 
-uniform vec3 colorization;
-uniform float saturation;
+uniform vec3 colorization = vec3(1, 1, 1);
+uniform float saturation = 1;
 
 void fragment() {
     vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV + tex_offset, 0.0).rgb;
@@ -23,5 +23,5 @@ void fragment() {
 shader = SubResource( 1 )
 shader_param/whitening = null
 shader_param/tex_offset = null
-shader_param/colorization = null
-shader_param/saturation = null
+shader_param/colorization = Vector3( 1, 1, 1 )
+shader_param/saturation = 1.0
