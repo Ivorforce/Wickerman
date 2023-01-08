@@ -1,13 +1,16 @@
 extends Node
 
 onready var target: Vector2 = Vector2.ZERO
+var time_since_reorientation := 0.0
 var is_running = false
 
 func _ready():
 	target = get_parent().global_position
 
-func _physics_process(delta):
+func _physics_process(delta: float):
 	var parent: NPC = get_parent()
+	
+	time_since_reorientation += delta
 	
 	var direction := target - parent.global_position
 	var speed = parent.speed
@@ -27,13 +30,15 @@ func _physics_process(delta):
 			is_running = true
 		else:
 			target = parent.global_position
+			time_since_reorientation = 0.0
 			direction = Vector2.ZERO
 			is_running = false
 
-	if direction.length_squared() < 20 * 20:
+	if (time_since_reorientation > 0.1) if direction.length_squared() < 20 * 20 else (time_since_reorientation > 2):
 		direction = Vector2.ZERO
-		if randf() < 0.01:
+		if randf() < 0.02:
 			target = parent.global_position + Vector2(rand_range(-100, 100), rand_range(-100, 100))
+			time_since_reorientation = 0.0
 			direction = target - parent.global_position
 
 	if direction.length() > 1.0:
