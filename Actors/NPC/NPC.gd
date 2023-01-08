@@ -65,17 +65,17 @@ func damage(damage: int, source: Node2D):
 func be_scared_of(cause: Node2D):
 	if is_alert_time <= 0:
 		is_shocked_time = initial_shock_time * rand_range(0.5, 1.0)
+		
+		var exclamation_mark := ExclamationMarkEntity.instance()
+		exclamation_mark.time_until_death = max(is_shocked_time - 0.05, 0.2)
+		add_child(exclamation_mark)
+		exclamation_mark.global_position = global_position - Vector2(0, 80)
 	else:
 		is_shocked_time = 0.2
 	
 	is_scared_target = cause
 	is_alert_time = max_alert_time
 	
-	var exclamation_mark := ExclamationMarkEntity.instance()
-	exclamation_mark.time_until_death = max(is_shocked_time - 0.05, 0.2)
-	add_child(exclamation_mark)
-	exclamation_mark.global_position = global_position - Vector2(0, 80)
-
 
 func bleed(scale: float):
 	var blood: Node2D = BloodEntity.instance()

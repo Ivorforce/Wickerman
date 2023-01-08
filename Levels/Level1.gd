@@ -8,6 +8,8 @@ onready var FoliageEntity = preload("res://Scenery/Foliage/Grass.tscn")
 
 onready var entities = $Entities
 
+var time_of_day := 0.0
+
 func _ready():
 	for i in range(20):
 		var center := Vector2(rand_range(-1500, 1500), rand_range(-1500, 1500))
@@ -27,3 +29,12 @@ func _ready():
 		var entity: Grass = FoliageEntity.instance()
 		entity.global_position = Vector2(rand_range(-2000, 2000), rand_range(-2000, 2000))
 		entities.add_child(entity)
+
+func _process(delta):
+	# 4m days
+	time_of_day += delta / (60.0 * 4.0)
+
+	var sun_pos = cos((time_of_day - 0.4) * PI / 1.3)
+	var post_process: PostProcess = $"/root/Game/CanvasLayer/PostProcess"
+	post_process.colorization = Vector3(sun_pos, pow(sun_pos, 1.4), pow(sun_pos, 1.6))
+	post_process.saturation = min(1.0, sun_pos + 0.5)
