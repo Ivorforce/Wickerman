@@ -308,7 +308,7 @@ position = Vector2( -590, 1578 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Wheat" parent="Entities" instance=ExtResource( 9 )]
-position = Vector2( -288, 71 )
+position = Vector2( -670, -295 )
 entity_path = "res://Scenery/Foliage/Wheat.tscn"
 min_count = 10
 max_count = 50
