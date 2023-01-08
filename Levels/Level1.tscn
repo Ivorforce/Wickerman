@@ -308,7 +308,7 @@ position = Vector2( -590, 1578 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Wheat" parent="Entities" instance=ExtResource( 9 )]
-position = Vector2( -670, -295 )
+position = Vector2( -817, 452 )
 entity_path = "res://Scenery/Foliage/Wheat.tscn"
 min_count = 10
 max_count = 50
@@ -544,6 +544,240 @@ max_count = 50
 [node name="Wheat11" parent="Entities" instance=ExtResource( 9 )]
 position = Vector2( 1000, -1463 )
 entity_path = "res://Scenery/Foliage/Wheat.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1056, -637 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass2" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1409, -293 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass3" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 954, -313 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass4" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1543, -574 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass5" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1353, -384 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass6" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1453, 55 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass7" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 558, -511 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass8" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1025, -416 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass9" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1502, -998 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass10" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1009, 309 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass11" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -836, 745 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass12" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1100, 904 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass13" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1397, 988 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass14" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1178, 1183 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass15" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1327, 1412 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass16" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -1205, 1688 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass17" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -833, 1789 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass18" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -230, 1364 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass19" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -412, 1013 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass20" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -762, 1036 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass21" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( -782, 525 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass22" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 400, 815 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass23" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 606, 1178 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass24" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 602, 1454 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass25" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1204, 1445 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass26" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1468, 1430 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass39" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1617, 1777 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass27" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1040, 1292 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass28" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1747, 1005 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass29" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1275, 894 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass30" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1026, 918 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass31" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1189, 570 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass32" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1633, 596 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass33" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 879, 381 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass34" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 768, 540 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass36" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1882, 1473 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass37" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1900, 102 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass38" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1206, -158 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
+min_count = 10
+max_count = 50
+
+[node name="Grass35" parent="Entities" instance=ExtResource( 9 )]
+position = Vector2( 1868, 682 )
+entity_path = "res://Scenery/Foliage/Grass.tscn"
 min_count = 10
 max_count = 50
 

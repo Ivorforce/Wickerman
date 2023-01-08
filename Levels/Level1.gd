@@ -31,7 +31,7 @@ func _ready():
 			entity.global_position = center + Vector2(rand_range(-200, 200), rand_range(-200, 200))
 			entities.add_child(entity)
 
-	for i in range(500):
+	for i in range(100):
 		var entity: Grass = FoliageEntity.instance()
 		entity.global_position = Vector2(rand_range(-2000, 2000), rand_range(-2000, 2000))
 		
