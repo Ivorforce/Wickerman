@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/carrot_hit.mp3-84bc840e6d6c0c359feaf9ebd7c37f5d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/carrot_hit.mp3"
+dest_files=[ "res://.import/carrot_hit.mp3-84bc840e6d6c0c359feaf9ebd7c37f5d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

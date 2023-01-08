@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lightning_wickerman_fire.mp3-483adfc0ee5bd2201f7d2bdf03f595f9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/lightning_wickerman_fire.mp3"
+dest_files=[ "res://.import/lightning_wickerman_fire.mp3-483adfc0ee5bd2201f7d2bdf03f595f9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

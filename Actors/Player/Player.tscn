@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Actors/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Actors/Player/PlayerAnticipation.png" type="Texture" id=2]
 [ext_resource path="res://Actors/Player/PlayerTorch.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/day_horror_wind_ambient.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/scythe_attack.mp3" type="AudioStream" id=5]
 [ext_resource path="res://Actors/Player/PlayerController.gd" type="Script" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -42,3 +44,10 @@ shape = SubResource( 3 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -17 )
 current = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )

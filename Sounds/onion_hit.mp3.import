@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onion_hit.mp3-23b7cf7fab50aca31b6e06501b22fd39.mp3str"
+
+[deps]
+
+source_file="res://Sounds/onion_hit.mp3"
+dest_files=[ "res://.import/onion_hit.mp3-23b7cf7fab50aca31b6e06501b22fd39.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

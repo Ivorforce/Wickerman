@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/day_horror_wind_ambient.mp3-375936f205ca68d442f33e90962488df.mp3str"
+
+[deps]
+
+source_file="res://Sounds/day_horror_wind_ambient.mp3"
+dest_files=[ "res://.import/day_horror_wind_ambient.mp3-375936f205ca68d442f33e90962488df.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

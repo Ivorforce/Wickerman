@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/night_theme.mp3-7167ebdf59d27d126d02e50444af36e2.mp3str"
+
+[deps]
+
+source_file="res://Sounds/night_theme.mp3"
+dest_files=[ "res://.import/night_theme.mp3-7167ebdf59d27d126d02e50444af36e2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -35,7 +35,6 @@ var is_holding_torch := false
 
 var dragging_body: Corpse = null
 
-
 func handle_actions():
 	if Input.is_action_just_pressed("action"):
 		if dragging_body == null:
@@ -136,6 +135,8 @@ func _physics_process(delta):
 
 func attack():
 	_recovery_time = 0.2
+
+	$AttackSound.play()
 
 	var attack_fx: PlayerAttackFX = PlayerAttackFXEntities[_look_direction].instance()
 	attack_fx.time_left = 0.2

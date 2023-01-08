@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/scythe_attack.mp3-2c7c28c74460a9f362a5ef3ae6932944.mp3str"
+
+[deps]
+
+source_file="res://Sounds/scythe_attack.mp3"
+dest_files=[ "res://.import/scythe_attack.mp3-2c7c28c74460a9f362a5ef3ae6932944.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
