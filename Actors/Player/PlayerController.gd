@@ -21,6 +21,7 @@ export var friction = 0.18
 
 var _time_to_attack := -1.0
 var _recovery_time := -1.0
+var _summon_torch_time := -1.0
 
 # Mapping of direction to a sprite index.
 var _sprites := {Vector2.RIGHT: 1, Vector2.LEFT: 2, Vector2.UP: 3, Vector2.DOWN: 4}
@@ -29,6 +30,8 @@ var _velocity := Vector2.ZERO
 
 onready var animated_sprite: AnimatedSprite = $AnimatedSprite
 
+
+var is_holding_torch := false
 
 var dragging_body: Corpse = null
 
@@ -53,7 +56,8 @@ func handle_actions():
 		
 	if Input.is_action_just_pressed("attack") and _time_to_attack <= 0 and dragging_body == null:
 		_time_to_attack = 0.8
-		animated_sprite.animation = "attack"
+		if not is_holding_torch:
+			animated_sprite.animation = "attack"
 	
 	if _time_to_attack <= 0 and _recovery_time <= 0:
 		if Input.is_action_pressed("right"):
@@ -114,6 +118,14 @@ func _physics_process(delta):
 		target_velocity += _look_direction * 1000 * _recovery_time
 		_recovery_time -= delta
 
+	if _summon_torch_time > 0:
+		_summon_torch_time -= delta
+		target_velocity = Vector2.ZERO
+		
+		if _summon_torch_time < 0:
+			animated_sprite.animation = "torch"
+			is_holding_torch = true
+	
 	_velocity += (target_velocity - _velocity) * friction
 	_velocity = move_and_slide(_velocity)
 
@@ -132,7 +144,15 @@ func attack():
 	get_parent().get_parent().get_parent().get_node("FX").add_child(attack_fx)
 	attack_fx.global_position = global_position + Vector2(0, -40) + _look_direction * 30
 	
-	animated_sprite.animation = "default"
+	if not is_holding_torch:
+		animated_sprite.animation = "default"
 
 func _update_sprite() -> void:
 	animated_sprite.frame = _sprites[_look_direction]
+
+func change_to_torch():
+	if is_holding_torch or _summon_torch_time > 0:
+		return
+		
+	_summon_torch_time = 1.5
+	animated_sprite.animation = "attack"

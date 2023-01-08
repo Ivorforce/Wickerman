@@ -8,7 +8,7 @@ extents = Vector2( 80, 80 )
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="SacrificeSlot" type="Sprite" parent="."]
